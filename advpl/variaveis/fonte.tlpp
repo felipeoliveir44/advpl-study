@@ -1,0 +1,7 @@
+#INCLUDE 'protheus.ch'
+
+User Function tipagemForte()
+    Local cTexto as Character
+    cTexto = "Luiz"
+    alert(cTexto)
+Return
