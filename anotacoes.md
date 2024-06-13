@@ -432,6 +432,29 @@ Local oBotao as Object
 // Prompt - Qual o texto que irá aparecer no botão
 // Action - Qual ação irá ser realizado ao clicar
 @30, 60 BUTTON oBotao PROMPT "OK" of oDlg PIXEL SIZE 70, 20 ACTION alert("Seu nome é: " + cNome)
+```
+
+Código final
+```advpl
+User Function primeiraTelaTLPP()
+    Local oDlg as Object
+	Local oGet as Object
+	Local cNome as Character
+	Local oBotao as Object
+	cNome := Space(30)
+
+	DEFINE MSDIALOG oDlg TITLE "Tela inicial"
+
+	oDlg:nWidth:=400
+	oDlg:nHeight:=400
+    
+	@06, 10 SAY 'Digite seu nome: ' PIXEL of oDlg
+    @06, 60 GET oGet VAR cNome PIXEL of oDlg PIXEL SIZE 70, 10 
+    @30, 60 BUTTON oBotao PROMPT "OK" of oDlg PIXEL SIZE 70, 20 ACTION alert("Seu nome é: " + cNome)
+
+	ACTIVATE MSDIALOG oDlg CENTERED
+Return
+```
 
 
 

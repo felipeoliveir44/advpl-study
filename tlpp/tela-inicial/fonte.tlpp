@@ -1,8 +1,5 @@
 #INCLUDE 'TOTVS.CH'
 
-
-#INCLUDE 'TOTVS.CH'
-
 User Function primeiraTelaTLPP()
     Local oDlg as Object
 	Local oGet as Object
