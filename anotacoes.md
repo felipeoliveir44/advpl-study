@@ -47,78 +47,78 @@ https://www.youtube.com/watch?v=QwPRNeB6mno
 1. Conhecimento Básico de Protheus
 
 Entender o que é o Protheus e como ele funciona é fundamental:
-- O que é o Protheus [x]
-- Arquitetura do Protheus (App Server, RPO, etc.) [x]
-- Principais módulos do Protheus
+- [x] O que é o Protheus 
+- [x] Arquitetura do Protheus (App Server, RPO, etc.) 
+- [ ] Principais módulos do Protheus
 
 2. Ambiente de Desenvolvimento
 
 Configurar e familiarizar-se com o ambiente de desenvolvimento:
-- Instalação e configuração do App Server [x]
-- Configuração do ambiente de desenvolvimento (por exemplo, Totvs Developer Studio) [x]
-- Conhecer e navegar no RPO 
+- [x] Instalação e configuração do App Server 
+- [x] Configuração do ambiente de desenvolvimento (por exemplo, Totvs Developer Studio)
+- [ ] Conhecer e navegar no RPO 
 
 3. Fundamentos de Programação 
 
 Antes de mergulhar no ADVPL, é importante ter uma base sólida em programação. Isso inclui:
-- Estruturas de dados (variáveis, arrays, etc.) [x]
-- Estruturas de controle (if, loops, etc.) [x]
-- Conceitos de funções e procedimentos [x]
+- [x] Estruturas de dados (variáveis, arrays, etc.) 
+- [x] Estruturas de controle (if, loops, etc.) 
+- [x] Conceitos de funções e procedimentos 
 
 4. Sintaxe Básica do ADVPL
 
 Aprender a sintaxe e os conceitos básicos do ADVPL:
-- Declaração de variáveis e tipos de dados [x]
-- Operadores aritméticos e lógicos
-- Estruturas de controle de fluxo (If, For, While)
+- [x] Declaração de variáveis e tipos de dados
+- [ ] Operadores aritméticos e lógicos
+- [ ] Estruturas de controle de fluxo (If, For, While)
 
 5. Funções e Procedimentos
 
-- Entender como criar e utilizar funções e procedimentos em ADVPL:
-- Declaração de funções (User Function)
-- Passagem de parâmetros e retorno de valores
-- Escopo de variáveis
+- [ ] Entender como criar e utilizar funções e procedimentos em ADVPL:
+- [ ] Declaração de funções (User Function)
+- [ ] Passagem de parâmetros e retorno de valores
+- [ ] Escopo de variáveis
 
 6. Manipulação de Dados
 
 Aprender a trabalhar com dados em ADVPL:
-- Manipulação de strings
-- Manipulação de datas
-- Arrays e matrizes
+- [ ] Manipulação de strings
+- [ ] Manipulação de datas
+- [ ] Arrays e matrizes
 
 7. Acesso a Banco de Dados
 
 Trabalhar com o banco de dados utilizando ADVPL:
-- Estruturas de tabelas do Protheus
-- Comandos básicos de SQL em ADVPL (DBSelect, DBAppend, DBCommit)
-- Criação de consultas e manipulação de registros
+- [ ] Estruturas de tabelas do Protheus
+- [ ] Comandos básicos de SQL em ADVPL (DBSelect, DBAppend, DBCommit)
+- [ ] Criação de consultas e manipulação de registros
 
 8. Interfaces de Usuário
-- Desenvolver e customizar interfaces de usuário no Protheus:
-- Criação de telas e diálogos
-- Manipulação de elementos da interface (botões, campos, etc.)
-- Eventos de interface (OnClick, OnChange, etc.)
+- [ ] Desenvolver e customizar interfaces de usuário no Protheus:
+- [ ] Criação de telas e diálogos
+- [ ] Manipulação de elementos da interface (botões, campos, etc.)
+- [ ] Eventos de interface (OnClick, OnChange, etc.)
 
 9. Relatórios
 
 Gerar e customizar relatórios em ADVPL:
-- Criação de relatórios básicos
-- Formatação e agrupamento de dados
-- Exportação de relatórios para diferentes formatos (PDF, Excel, etc.)
+- [ ] Criação de relatórios básicos
+- [ ] Formatação e agrupamento de dados
+- [ ] Exportação de relatórios para diferentes formatos (PDF, Excel, etc.)
 
 10. Boas Práticas e Debugging
 
 Adotar boas práticas de desenvolvimento e depuração:
-- Organização e modularização do código
-- Comentários e documentação
-- Uso de ferramentas de debugging
+- [ ] Organização e modularização do código
+- [ ] Comentários e documentação
+- [ ] Uso de ferramentas de debugging
 
 11. Recursos Avançados
 
 Explorar recursos mais avançados e específicos do ADVPL:
-- Web Services e integração com outros sistemas
-- Manipulação de arquivos
-- Criação de bibliotecas e componentes reutilizáveis
+- [ ] Web Services e integração com outros sistemas
+- [ ] Manipulação de arquivos
+- [ ] Criação de bibliotecas e componentes reutilizáveis
 
 # VS Code
 
@@ -159,7 +159,61 @@ F5 e digitar o fonte
 }
 ```
 
-# Importante
+# Tipos de funções
+
+Temos 3 tipos de funções em ADVPL que são:
+Function
+User function
+Static function
+
+## Function()
+
+São funcoes restritas ao desenvolvimento da área de inteligencia do protheus
+Uma function() pode carregar ate 10 caracteres em seu nome
+
+```advpl
+Function MATA001CLI()
+Alert('oi')
+Return
+```
+
+Voce nao consegue desenvolver uma function sem autorização da TOTVS, funcoes sao funcoes padroes do protheus
+
+## User function
+
+São conhecidas como funcoes definidas pelo usuario, são tipos de funcoes implementados pelo ADVPL, para garantir que desenvolvimentos especificos nao realizadas pela Function() sobreponham as funcoes padroes do sistema
+
+O ADVPL adiciona um "U_" antes do nome de uma user function, seguindo a regra de que o nome de uma funcao deve ter no máximo 10 caracteres, sendo 2 reservados para "U_"
+
+Voce pode acessar uma user function por outras funcoes em uso pela aplicação, desde que sua chama utilize os caracteres "U_" em conjunto com o nome da funcao
+
+## Static function
+
+Funcoes ADVPL cuja visibilidade esta restrita as funcoes descritas no mesmo arquivo de codigo fonte (Mesmo arquivo PRW) no qual são definidas
+
+```advpl
+Function MATA001C()
+	CriaSX1("MATA001C")
+Return
+
+Static Function CriaSX1()
+Return
+```
+
+# Variaveis
+
+Char: Utilizado para gravar informações de caracter (String)
+Number: Utilizado para numeros
+Date: Utilizado para data
+Logical: Utilizado para boolean, no ADVPL é representado por .T. ou .F.
+Array: Utilizado para coleção de dados
+Block/codeblock: Utilizado para coleção de comandos que podem ser macroexecutados, ou seja, é como um array porem o codeblock grava uma coleção de comandos
+Object: Utilizado para um objeto para criar uma interface
+Null: Utilizado para nulo
+
+Tambem é utilizado o Local (Qual seu escopo)
+
+ADVPL possui uma tipagem fraca, ja o TL++ (Nome do arquivo = teste.tlpp) adiciona uma tipagem ao ADVPL
 
 ## Sobre operadores de comparação: 
 
@@ -265,62 +319,5 @@ lResultado := .NOT. lA
 ConOut("Resultado do Não lógico: " + If(lResultado, "Verdadeiro", "Falso"))
 
 ```
-
-# Tipos de funções
-
-Temos 3 tipos de funções em ADVPL que são:
-Function
-User function
-Static function
-
-## Function()
-
-São funcoes restritas ao desenvolvimento da área de inteligencia do protheus
-Uma function() pode carregar ate 10 caracteres em seu nome
-
-```advpl
-Function MATA001CLI()
-Alert('oi')
-Return
-```
-
-Voce nao consegue desenvolver uma function sem autorização da TOTVS, funcoes sao funcoes padroes do protheus
-
-## User function
-
-São conhecidas como funcoes definidas pelo usuario, são tipos de funcoes implementados pelo ADVPL, para garantir que desenvolvimentos especificos nao realizadas pela Function() sobreponham as funcoes padroes do sistema
-
-O ADVPL adiciona um "U_" antes do nome de uma user function, seguindo a regra de que o nome de uma funcao deve ter no máximo 10 caracteres, sendo 2 reservados para "U_"
-
-Voce pode acessar uma user function por outras funcoes em uso pela aplicação, desde que sua chama utilize os caracteres "U_" em conjunto com o nome da funcao
-
-## Static function
-
-Funcoes ADVPL cuja visibilidade esta restrita as funcoes descritas no mesmo arquivo de codigo fonte (Mesmo arquivo PRW) no qual são definidas
-
-```advpl
-Function MATA001C()
-	CriaSX1("MATA001C")
-Return
-
-Static Function CriaSX1()
-Return
-```
-
-# Variaveis
-
-Char: Utilizado para gravar informações de caracter (String)
-Number: Utilizado para numeros
-Date: Utilizado para data
-Logical: Utilizado para boolean, no ADVPL é representado por .T. ou .F.
-Array: Utilizado para coleção de dados
-Block/codeblock: Utilizado para coleção de comandos que podem ser macroexecutados, ou seja, é como um array porem o codeblock grava uma coleção de comandos
-Object: Utilizado para um objeto para criar uma interface
-Null: Utilizado para nulo
-
-Tambem é utilizado o Local (Qual seu escopo)
-
-ADVPL possui uma tipagem fraca, ja o TL++ (Nome do arquivo = teste.tlpp) adiciona uma tipagem ao ADVPL
-
 
 
