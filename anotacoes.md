@@ -215,6 +215,44 @@ Tambem é utilizado o Local (Qual seu escopo)
 
 ADVPL possui uma tipagem fraca, ja o TL++ (Nome do arquivo = teste.tlpp) adiciona uma tipagem ao ADVPL
 
+``` advpl
+User Function varTipos()
+
+Local cNome := "Luiz Felipe"
+Local nNumero := 0
+Local dData := CTOD("12/06/2024")
+Local lLogical := .T.
+Local aArray := {"Nome", 10, .F.}
+Local bBloco := {||5+10}
+Local oObjeto := nil // Nil = null
+Local xNull := nil
+
+alert(cNome)
+
+cNome := 10
+
+alert(cNome)
+
+cNome := "Luiz" + "10"
+alert(cNome)
+
+cNome := "Luiz" + 10 // Erro, pois não é possivel juntar dois tipos diferentes em uma variavel
+
+Return 
+```
+
+Utilizando TL++ para tipagem
+
+``` tlpp
+
+User Function tipagemForte()
+    Local cTexto as Character
+    cTexto = "Luiz"
+    alert(cTexto)
+Return
+```
+
+
 ## Sobre operadores de comparação: 
 
 ``` advpl
