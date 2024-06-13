@@ -44,43 +44,50 @@ https://www.youtube.com/watch?v=QwPRNeB6mno
 
 # Roadmap sobre ADVPL
 
-1. Fundamentos de Programação
-Antes de mergulhar no ADVPL, é importante ter uma base sólida em programação. Isso inclui:
-- Estruturas de dados (variáveis, arrays, etc.)
-- Estruturas de controle (if, loops, etc.)
-- Conceitos de funções e procedimentos
+1. Conhecimento Básico de Protheus
 
-2. Conhecimento Básico de Protheus
 Entender o que é o Protheus e como ele funciona é fundamental:
-- O que é o Protheus
-- Arquitetura do Protheus (App Server, RPO, etc.)
+- O que é o Protheus [x]
+- Arquitetura do Protheus (App Server, RPO, etc.) [x]
 - Principais módulos do Protheus
 
-3. Ambiente de Desenvolvimento
+2. Ambiente de Desenvolvimento
+
 Configurar e familiarizar-se com o ambiente de desenvolvimento:
-- Instalação e configuração do App Server
-- Configuração do ambiente de desenvolvimento (por exemplo, Totvs Developer Studio)
-- Conhecer e navegar no RPO
+- Instalação e configuração do App Server [x]
+- Configuração do ambiente de desenvolvimento (por exemplo, Totvs Developer Studio) [x]
+- Conhecer e navegar no RPO 
+
+3. Fundamentos de Programação 
+
+Antes de mergulhar no ADVPL, é importante ter uma base sólida em programação. Isso inclui:
+- Estruturas de dados (variáveis, arrays, etc.) [x]
+- Estruturas de controle (if, loops, etc.) [x]
+- Conceitos de funções e procedimentos [x]
 
 4. Sintaxe Básica do ADVPL
-- Aprender a sintaxe e os conceitos básicos do ADVPL:
-- Declaração de variáveis e tipos de dados
+
+Aprender a sintaxe e os conceitos básicos do ADVPL:
+- Declaração de variáveis e tipos de dados [x]
 - Operadores aritméticos e lógicos
-Estruturas de controle de fluxo (If, For, While)
+- Estruturas de controle de fluxo (If, For, While)
 
 5. Funções e Procedimentos
+
 - Entender como criar e utilizar funções e procedimentos em ADVPL:
 - Declaração de funções (User Function)
 - Passagem de parâmetros e retorno de valores
 - Escopo de variáveis
 
 6. Manipulação de Dados
+
 Aprender a trabalhar com dados em ADVPL:
 - Manipulação de strings
 - Manipulação de datas
 - Arrays e matrizes
 
 7. Acesso a Banco de Dados
+
 Trabalhar com o banco de dados utilizando ADVPL:
 - Estruturas de tabelas do Protheus
 - Comandos básicos de SQL em ADVPL (DBSelect, DBAppend, DBCommit)
@@ -88,24 +95,26 @@ Trabalhar com o banco de dados utilizando ADVPL:
 
 8. Interfaces de Usuário
 - Desenvolver e customizar interfaces de usuário no Protheus:
-
-Criação de telas e diálogos
+- Criação de telas e diálogos
 - Manipulação de elementos da interface (botões, campos, etc.)
 - Eventos de interface (OnClick, OnChange, etc.)
 
 9. Relatórios
+
 Gerar e customizar relatórios em ADVPL:
 - Criação de relatórios básicos
 - Formatação e agrupamento de dados
 - Exportação de relatórios para diferentes formatos (PDF, Excel, etc.)
 
 10. Boas Práticas e Debugging
+
 Adotar boas práticas de desenvolvimento e depuração:
 - Organização e modularização do código
 - Comentários e documentação
 - Uso de ferramentas de debugging
 
 11. Recursos Avançados
+
 Explorar recursos mais avançados e específicos do ADVPL:
 - Web Services e integração com outros sistemas
 - Manipulação de arquivos
@@ -152,7 +161,7 @@ F5 e digitar o fonte
 
 # Importante
 
-Sobre operadores de comparação: 
+## Sobre operadores de comparação: 
 
 ``` advpl
 Local nValor1 := 10
@@ -201,8 +210,61 @@ Else
 EndIf
 
 ```
+## Sobre operadores aritméticos
 
+``` advpl
 
+Local nA := 10
+Local nB := 5
+Local nResultado
+
+// Adição
+nResultado := nA + nB
+ConOut("Resultado da Adição: " + Str(nResultado))
+
+// Subtração
+nResultado := nA - nB
+ConOut("Resultado da Subtração: " + Str(nResultado))
+
+// Multiplicação
+nResultado := nA * nB
+ConOut("Resultado da Multiplicação: " + Str(nResultado))
+
+// Divisão
+nResultado := nA / nB
+ConOut("Resultado da Divisão: " + Str(nResultado))
+
+// Divisão inteira
+nResultado := nA // nB
+ConOut("Resultado da Divisão Inteira: " + Str(nResultado))
+
+// Módulo
+nResultado := nA % nB
+ConOut("Resultado do Módulo: " + Str(nResultado))
+
+```
+
+## Sobre operadores lógicos
+
+``` advpl
+
+Local lA := .T. // Verdadeiro
+Local lB := .F. // Falso
+Local lResultado
+
+// E lógico
+lResultado := lA .AND. lB
+ConOut("Resultado do E lógico: " + If(lResultado, "Verdadeiro", "Falso"))
+
+// Ou lógico
+lResultado := lA .OR. lB
+ConOut("Resultado do Ou lógico: " + If(lResultado, "Verdadeiro", "Falso"))
+
+// Não lógico
+lResultado := .NOT. lA
+ConOut("Resultado do Não lógico: " + If(lResultado, "Verdadeiro", "Falso"))
+
+```
 
 # Tipos de funções
 
