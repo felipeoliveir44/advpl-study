@@ -359,3 +359,79 @@ lResultado := .NOT. lA
 ConOut("Resultado do Não lógico: " + If(lResultado, "Verdadeiro", "Falso"))
 
 ```
+# Criando telas utilizando TLPP
+
+Qual o diferencial de utilizar tlpp?
+
+Enquanto no ADVPL, podemos utilizar apenas 10 caracteres para criação de uma função
+No TLPP, podemos colocar nomes mais longos com o limite sendo 255 caracteres
+
+TLPP possui uma tipagem forte, melhoria na orientação a objetos
+TLPP não possui suporte para desenvolviemnto utilizando MVC
+
+O que é a diretriz include?
+
+São utilizados para associar outros códigos - Mesma coisa de chamar uma biblioteca no JAVA/C#/JavaScript
+
+Criar um objeto
+
+```advpl
+Local oDlg as Object
+```
+
+Definir que tipo de objeto será criado
+
+```advpl
+// MSDIALOG é o tipo de objeto que será criado e será instanciado na variavel oDlg
+
+// Titulo da tela - title
+DEFINE MSDIALOG oDlg title 'Tela'
+
+// Utilizar o comando ACTIVATE para desenhar a tela
+ACTIVATE
+```
+
+Definir o dimensionamento
+
+```advpl
+// Chamando uma propriedade do objeto
+oDlg:nWidth:=250
+oDlg:nHeight:=250
+
+// Comando CENTERED serve para centralizar essa tela
+ACTIVATE MSDIALOG oDlg CENTERED
+```
+Escrever um texto na tela
+
+```advpl
+// @ - Indicar a coordenada, primeiro eixo X depois Y
+// Linha / Coluna
+@06, @10 SAY 'Digite seu nome' of oDlg PIXEL
+```
+
+Para criar uma caixa de texto, precisamos de uma variável `oGet` e também uma variável para guardar a informação do usuário `cNome`
+
+```advpl
+
+Local oGet as Object
+Local cNome as Character
+// Inicia a variável com 30 espaços em branco
+cNome := Space(30)
+// Adicionar coordenada desse campo
+
+// Size - Definir comprimento e altura
+@06,@40 GET oGet VAR cNome of oDlg SIZE 70,10 PIXEL
+
+```
+
+Criando um botão
+
+```advpl
+
+Local oBotao as Object
+// Prompt - Qual o texto que irá aparecer no botão
+// Action - Qual ação irá ser realizado ao clicar
+@30, 60 BUTTON oBotao PROMPT "OK" of oDlg PIXEL SIZE 70, 20 ACTION alert("Seu nome é: " + cNome)
+
+
+
