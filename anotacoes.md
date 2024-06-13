@@ -359,5 +359,3 @@ lResultado := .NOT. lA
 ConOut("Resultado do Não lógico: " + If(lResultado, "Verdadeiro", "Falso"))
 
 ```
-
-
