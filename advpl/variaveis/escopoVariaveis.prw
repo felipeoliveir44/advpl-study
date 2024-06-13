@@ -5,7 +5,7 @@ Local -> Visivel apenas dentro da funcao onde foi criado
 Private -> Visiavel na funcao onde ela foi criada e nas funcoes seguintes
 Public -> Visivel em todas as funcoes a partir do momento em que foi criada
 Static -> Visivel em todas as funcoes dentro do fonte onde ela foi criada
-    - Pode ser declarada fora da funcao?
+    - Pode ser declarada fora da funcao
 
 */
 
