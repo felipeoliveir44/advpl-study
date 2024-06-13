@@ -243,8 +243,7 @@ Return
 
 Utilizando TL++ para tipagem
 
-``` tlpp
-
+``` advpl
 User Function tipagemForte()
     Local cTexto as Character
     cTexto = "Luiz"
@@ -256,6 +255,9 @@ Return
 ## Sobre operadores de comparação: 
 
 ``` advpl
+
+// O método ConOut exibe uma mensagem no console de saída durante a execução do programa
+
 Local nValor1 := 10
 Local nValor2 := 20
 
