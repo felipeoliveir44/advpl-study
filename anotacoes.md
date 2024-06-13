@@ -42,11 +42,81 @@ https://www.youtube.com/watch?v=NxtMvQ_zmW0
 Utilizando layouts com ADVPL		
 https://www.youtube.com/watch?v=QwPRNeB6mno
 
+# Roadmap sobre ADVPL
+
+1. Fundamentos de Programação
+Antes de mergulhar no ADVPL, é importante ter uma base sólida em programação. Isso inclui:
+- Estruturas de dados (variáveis, arrays, etc.)
+- Estruturas de controle (if, loops, etc.)
+- Conceitos de funções e procedimentos
+
+2. Conhecimento Básico de Protheus
+Entender o que é o Protheus e como ele funciona é fundamental:
+- O que é o Protheus
+- Arquitetura do Protheus (App Server, RPO, etc.)
+- Principais módulos do Protheus
+
+3. Ambiente de Desenvolvimento
+Configurar e familiarizar-se com o ambiente de desenvolvimento:
+- Instalação e configuração do App Server
+- Configuração do ambiente de desenvolvimento (por exemplo, Totvs Developer Studio)
+- Conhecer e navegar no RPO
+
+4. Sintaxe Básica do ADVPL
+- Aprender a sintaxe e os conceitos básicos do ADVPL:
+- Declaração de variáveis e tipos de dados
+- Operadores aritméticos e lógicos
+Estruturas de controle de fluxo (If, For, While)
+
+5. Funções e Procedimentos
+- Entender como criar e utilizar funções e procedimentos em ADVPL:
+- Declaração de funções (User Function)
+- Passagem de parâmetros e retorno de valores
+- Escopo de variáveis
+
+6. Manipulação de Dados
+Aprender a trabalhar com dados em ADVPL:
+- Manipulação de strings
+- Manipulação de datas
+- Arrays e matrizes
+
+7. Acesso a Banco de Dados
+Trabalhar com o banco de dados utilizando ADVPL:
+- Estruturas de tabelas do Protheus
+- Comandos básicos de SQL em ADVPL (DBSelect, DBAppend, DBCommit)
+- Criação de consultas e manipulação de registros
+
+8. Interfaces de Usuário
+- Desenvolver e customizar interfaces de usuário no Protheus:
+
+Criação de telas e diálogos
+- Manipulação de elementos da interface (botões, campos, etc.)
+- Eventos de interface (OnClick, OnChange, etc.)
+
+9. Relatórios
+Gerar e customizar relatórios em ADVPL:
+- Criação de relatórios básicos
+- Formatação e agrupamento de dados
+- Exportação de relatórios para diferentes formatos (PDF, Excel, etc.)
+
+10. Boas Práticas e Debugging
+Adotar boas práticas de desenvolvimento e depuração:
+- Organização e modularização do código
+- Comentários e documentação
+- Uso de ferramentas de debugging
+
+11. Recursos Avançados
+Explorar recursos mais avançados e específicos do ADVPL:
+- Web Services e integração com outros sistemas
+- Manipulação de arquivos
+- Criação de bibliotecas e componentes reutilizáveis
+
 # VS Code
 
 É necessário estar com o license server, appserver e dbaccess abertos
 
-Na extensão da TOTVS no vs code, em nome do servidor:
+Na extensão da TOTVS no VS Code, em nome do servidor:
+```
 curso_advpl
 localhost
 1234
@@ -57,6 +127,8 @@ O nome do ambiente é environment
 CTRL + F9 para compilar codigos ADVPL
 
 F5 e digitar o fonte
+
+```
 
 - O arquivo JSON launch.json é necessário estar assim: 
 ```json
@@ -77,6 +149,59 @@ F5 e digitar o fonte
     ]
 }
 ```
+
+# Importante
+
+Sobre operadores de comparação: 
+
+``` advpl
+Local nValor1 := 10
+Local nValor2 := 20
+
+// Igualdade
+If nValor1 == nValor2
+    ConOut("Os valores são iguais")
+Else
+    ConOut("Os valores são diferentes")
+EndIf
+
+// Diferente
+If nValor1 != nValor2
+    ConOut("Os valores são diferentes")
+Else
+    ConOut("Os valores são iguais")
+EndIf
+
+// Maior que
+If nValor1 > nValor2
+    ConOut("nValor1 é maior que nValor2")
+Else
+    ConOut("nValor1 não é maior que nValor2")
+EndIf
+
+// Menor que
+If nValor1 < nValor2
+    ConOut("nValor1 é menor que nValor2")
+Else
+    ConOut("nValor1 não é menor que nValor2")
+EndIf
+
+// Maior ou igual a
+If nValor1 >= nValor2
+    ConOut("nValor1 é maior ou igual a nValor2")
+Else
+    ConOut("nValor1 é menor que nValor2")
+EndIf
+
+// Menor ou igual a
+If nValor1 <= nValor2
+    ConOut("nValor1 é menor ou igual a nValor2")
+Else
+    ConOut("nValor1 é maior que nValor2")
+EndIf
+
+```
+
 
 
 # Tipos de funções
@@ -134,3 +259,6 @@ Null: Utilizado para nulo
 Tambem é utilizado o Local (Qual seu escopo)
 
 ADVPL possui uma tipagem fraca, ja o TL++ (Nome do arquivo = teste.tlpp) adiciona uma tipagem ao ADVPL
+
+
+
