@@ -1,5 +1,22 @@
 #INCLUDE 'TOTVS.CH'
 
+User Function CadSA1()
+	Private cCadastro as Character
+	Private aRotina as array
+
+	cCadastro:= "Cadastro de clientes"
+	aRotina := {} 
+
+	AADD(aRotina(), {"Pesquisar", "AxPesqui", 0, 1})
+	AADD(aRotina(), {"Visualizar", "AxVisual", 0, 2})
+	AADD(aRotina(), {"Incluir", "AxInclui", 0, 3})
+	AADD(aRotina(), {"Alterar", "AxAltera", 0, 4})
+	AADD(aRotina(), {"Excluir", "AxDeleta", 0, 5})
+	AADD(aRotina(), {"Pesquisar", "u_primeiraTelaTPP", 0, 6})
+
+	mBrowse(,,,,"SA1")
+Return
+
 User Function primeiraTelaTLPP()
     Local oDlg as Object
 	Local oGet as Object

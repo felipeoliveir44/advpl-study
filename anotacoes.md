@@ -455,6 +455,52 @@ User Function primeiraTelaTLPP()
 	ACTIVATE MSDIALOG oDlg CENTERED
 Return
 ```
+Criando uma tela no protheus
+
+Criando uma função `CadSA1()` que é uma tela de cadastro de clientes
+
+Utilizando o `mBrowse()` essa função tem uma serie de parametros, definindo as caracteristicas, cada parametro é separado por virgula
+
+```advpl
+User Function CadSA1()
+// Necessita de 2 variaveis private que tem nome definidos (Se não for esse nome, não irá funcionar)
+
+Private cCadastro as Character
+Private aRotina as array
+
+cCadastro:= "Cadastro de clientes"
+aRotina := {} // Precisa criar um array vazio antes (Instanciar)
+/* O comando AADD adiciona elementos em um array
+O primeiro parametro é passar o nome do array que irei adicionar alguma informação
+O segundo parametro, passar o valor que irei adicionar no array
+
+Os items do array do segundo parametro são:
+
+- Texto do botão que irá ser disponivel
+- Nome da função que será executada ao clicar no botão
+    * AxPesqui(E os outros) é uma função padrao que cria uma tela no browse
+- O terceiro item é um valor pré definido, sendo sempre 0
+- Número correspondente a essa opção
+
+* Na opção 6, iremos chamar a função personalizada que criamos
+*/
+AADD(aRotina(), {"Pesquisar", "AxPesqui", 0, 1})
+AADD(aRotina(), {"Visualizar", "AxVisual", 0, 2})
+AADD(aRotina(), {"Incluir", "AxInclui", 0, 3})
+AADD(aRotina(), {"Alterar", "AxAltera", 0, 4})
+AADD(aRotina(), {"Excluir", "AxDeleta", 0, 5})
+AADD(aRotina(), {"Pesquisar", "u_primeiraTelaTPP", 0, 6})
+
+// Parametros de dimensionamento da tela, se deixar sem nada irá criar uma tela com tamanho pré definido (Os 4 primeiros parametros)
+// O 5 parametro irá conter o nome da tabela que irá utilizar para o cadastro
+mBrowse(,,,,"SA1")
+
+Return
+
+```
+
+Após isso, chamar a função SIGAADV, porque sao acessados outros arquivos do protheus (Executa o protheus)
+
 
 
 
