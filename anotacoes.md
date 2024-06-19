@@ -69,22 +69,22 @@ Antes de mergulhar no ADVPL, é importante ter uma base sólida em programação
 
 Aprender a sintaxe e os conceitos básicos do ADVPL:
 - [x] Declaração de variáveis e tipos de dados
-- [ ] Operadores aritméticos e lógicos
-- [ ] Estruturas de controle de fluxo (If, For, While)
+- [x] Operadores aritméticos e lógicos
+- [x] Estruturas de controle de fluxo (If, For, While)
 
 5. Funções e Procedimentos
 
-- [ ] Entender como criar e utilizar funções e procedimentos em ADVPL:
-- [ ] Declaração de funções (User Function)
-- [ ] Passagem de parâmetros e retorno de valores
-- [ ] Escopo de variáveis
+- [x] Entender como criar e utilizar funções e procedimentos em ADVPL:
+- [x] Declaração de funções (User Function)
+- [x] Passagem de parâmetros e retorno de valores
+- [x] Escopo de variáveis
 
 6. Manipulação de Dados
 
 Aprender a trabalhar com dados em ADVPL:
 - [ ] Manipulação de strings
 - [ ] Manipulação de datas
-- [ ] Arrays e matrizes
+- [x] Arrays e matrizes
 
 7. Acesso a Banco de Dados
 
