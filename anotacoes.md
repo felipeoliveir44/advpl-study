@@ -82,7 +82,7 @@ Aprender a sintaxe e os conceitos básicos do ADVPL:
 6. Manipulação de Dados
 
 Aprender a trabalhar com dados em ADVPL:
-- [ ] Manipulação de strings
+- [x] Manipulação de strings
 - [ ] Manipulação de datas
 - [x] Arrays e matrizes
 
