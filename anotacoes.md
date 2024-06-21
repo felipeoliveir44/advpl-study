@@ -501,6 +501,11 @@ Return
 
 Após isso, chamar a função SIGAADV, porque sao acessados outros arquivos do protheus (Executa o protheus)
 
+# Banco de dados
+
+
+
+
 
 
 
