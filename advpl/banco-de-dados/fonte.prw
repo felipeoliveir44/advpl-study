@@ -31,3 +31,72 @@ user function banco0001()
 
 return
 
+User Function criar_bd()
+    // Variaveis 
+    Local aStruct := {}
+    Local cTable := "tbproduto"
+    Local cRdd   := 'TOPCONN'
+
+    // Abre conexao com BD
+    nHwnd := TCLink()
+    
+    // Conectou ao banco
+    if nHwnd >= 0
+        conout("Conectado")
+    endif
+
+    // Estrutura da tabelas
+    aadd(aStruct, {"id", "N", 10, 0})
+    aadd(aStruct, {"produto", "C", 10, 0})
+    aadd(aStruct, {"quantidade", "N", 100, 0})
+    aadd(aStruct, {"preco", "N", 30, 2})
+
+    // Cria tabela
+    dbCreate(cTable, aStruct, cRdd)
+    
+Return
+
+User Function sistema()
+
+    Local cTable := "tbproduto"
+    Local cAlias := "TBPRODUTO"
+    Local cId    := 4
+    Local cProduto := "" 
+    Local cQuantidade := "" 
+    Local cPreco := "" 
+
+    TCLink()
+    DbUseArea(.F., 'TOPCONN', cTable, (cAlias), .F., .T.)
+
+    alert(alias())
+
+    if Alias() == cAlias
+        alert("current workarea: " + cAlias)
+    else 
+        alert("erro")
+    endif
+
+    DbSelectArea("TBPRODUTO") // Seleciona a tabela
+    (TBPRODUTO)->(DbAppend(.F.))
+
+    cProduto    := FWInputBox("Digite o nome do produto", "", "")
+    cQuantidade := FWInputBox("Digite a quantidade de produtos", "", "")
+    cPreco      := FWInputBox("Digite o preço do produto", "Digite o preço do produto", "")
+
+    nQuantidade := Val(cQuantidade)
+    nPreco      := Val(cPreco)
+
+
+    (TBPRODUTO)->ID := cId
+    (TBPRODUTO)->PRODUTO := cProduto
+    (TBPRODUTO)->QUANTIDADE := nQuantidade
+    (TBPRODUTO)->PRECO      := nPreco
+    MsUnlock()              // Desbloqueia para gravação
+    DbCommit()              // Salva o registro
+    alert("Registro cadastrado com sucesso!")
+
+    
+
+     
+
+Return
